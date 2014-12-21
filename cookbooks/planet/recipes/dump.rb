@@ -91,7 +91,7 @@ end
 
 ["planetdump", "planet-mirror-redirect-update", "apache-latest-planet-filename"].each do |program|
   template "/usr/local/bin/#{program}" do
-    source "planetdump.erb"
+    source "#{program}.erb"
     owner "root"
     group "root"
     mode 0755
