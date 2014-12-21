@@ -95,11 +95,5 @@ end
     owner "root"
     group "root"
     mode 0755
-    variables {
-      :xml_dir => node[:planet][:dump][:xml_directory],
-      :xml_history_dir => node[:planet][:dump][:history_directory],
-      :pbf_dir => node[:planet][:dump][:pbf_directory],
-      :pbf_history_dir => node[:planet][:dump][:pbf_history_directory]
-    }
   end
 end
