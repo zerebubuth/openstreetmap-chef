@@ -1,0 +1,6 @@
+{
+    "id": "vagrant",
+    "uid": 900,
+    "comment": "Vagrant user",
+    "manage_home": false
+}

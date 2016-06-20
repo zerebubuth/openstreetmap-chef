@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-16.04
+
+suites:
+  - name: cgimap
+    run_list:
+      - accounts::default
+      - apt::default
+      - web::cgimap
+    attributes:
+      accounts:
+        users:
+          rails:
+            status: role
+            members: []
+          vagrant:
+            status: administrator
+    data_bag_path: test/integration/cgimap/data_bags
