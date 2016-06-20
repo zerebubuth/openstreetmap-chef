@@ -121,6 +121,11 @@ apt_source "mediawiki" do
   key "664C383A3566A3481B942F007A322AC6E84AFDD2"
 end
 
+apt_source "openstreetmap-cgimap" do
+  url "http://ppa.launchpad.net/zerebubuth/openstreetmap-cgimap/ubuntu"
+  key "CDADED50"
+end
+
 package "unattended-upgrades"
 
 auto_upgrades = if node[:apt][:unattended_upgrades][:enable]
