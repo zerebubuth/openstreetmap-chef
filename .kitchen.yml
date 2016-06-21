@@ -22,4 +22,7 @@ suites:
             members: []
           vagrant:
             status: administrator
+      apt:
+        sources:
+          - openstreetmap-cgimap
     data_bag_path: test/integration/cgimap/data_bags
