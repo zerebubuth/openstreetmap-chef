@@ -12,6 +12,11 @@ suites:
   - name: munin
     run_list:
       - recipe[munin::default]
+  - name: squid
+    run_list:
+      - recipe[squid::default]
+    attributes:
+      country: gb
   - name: tools
     run_list:
       - recipe[tools::default]

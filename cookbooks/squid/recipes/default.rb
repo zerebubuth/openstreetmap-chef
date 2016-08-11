@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
+# Use osmadmins PPA squid packages
+include_recipe "apt"
+
 package "squid"
 package "squidclient"
 
@@ -74,6 +77,10 @@ else
     subscribes :reload, "template[/etc/resolv.conf]"
   end
 end
+
+# munin_plugin depends on service[munin] being defined at compile time
+# see https://github.com/openstreetmap/chef/issues/80
+include_recipe "munin"
 
 munin_plugin "squid_cache"
 munin_plugin "squid_delay_pools"
