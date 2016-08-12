@@ -20,6 +20,21 @@
 # Use osmadmins PPA squid packages
 include_recipe "apt"
 
+# Pin the osmadmins PPA package version for squid to make sure that a more
+# recent one from Ubuntu is not picked up. Note that this pins the package
+# to a version from *any* PPA - would be better to pin it to the osmadmins
+# one, but I can't see how.
+file '/etc/apt/preferences.d/pin-squid-to-osmadmins-ppa' do
+  content <<EOF
+Package: squid squid-common
+Pin: origin ppa.launchpad.net
+Pin-Priority: 1001
+EOF
+  owner "root"
+  group "root"
+  mode 0o644
+end
+
 package "squid"
 package "squidclient"
 
